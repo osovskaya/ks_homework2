@@ -1,5 +1,13 @@
 <?php
 
+if (!file_exists(__DIR__.'/../models/UserModel.php'))
+    {
+        header('Location: /form');
+        exit;
+    }
+// include model
+require(__DIR__.'/../models/UserModel.php');
+
 class UserController
 {
     /**
@@ -12,14 +20,6 @@ class UserController
             require_once(__DIR__.'/../views/form.php');
             exit;
         }
-
-        if (!file_exists(__DIR__.'/../models/UserModel.php'))
-        {
-            header('Location: /form');
-            exit;
-        }
-        // include model
-        require(__DIR__.'/../models/UserModel.php');
 
         // add user to database
         $user = UserModel::addUser();
@@ -48,15 +48,6 @@ class UserController
      */
     public static function getUserInfo()
     {
-        if (!file_exists(__DIR__.'/../models/UserModel.php'))
-        {
-            header('Location: /form');
-            exit;
-        }
-
-        // include model
-        require(__DIR__.'/../models/UserModel.php');
-
         session_start();
         if (!empty($_SESSION['userid']))
         {
