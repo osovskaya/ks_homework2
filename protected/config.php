@@ -2,8 +2,8 @@
 
 $config = array(
     'db' => array(
-        'dsn' => 'mysql:host=localhost;dbname=keepsolid_courses',
-        'user' => 'root',
-        'password' => 'O$0vskaya'
+        'dsn' => 'mysql:host=localhost;dbname=dbname',
+        'user' => 'username',
+        'password' => 'password'
         ),
 );
