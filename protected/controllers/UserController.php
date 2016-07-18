@@ -19,7 +19,7 @@ class UserController
             exit;
         }
         // include model
-        require_once(__DIR__.'/../models/UserModel.php');
+        require(__DIR__.'/../models/UserModel.php');
 
         // add user to database
         $user = UserModel::addUser();
@@ -40,7 +40,7 @@ class UserController
             header('Location: /form');
             exit;
         }
-        require_once(__DIR__.'/../views/form.php');
+        require(__DIR__.'/../views/form.php');
     }
 
     /**
@@ -55,7 +55,7 @@ class UserController
         }
 
         // include model
-        require_once(__DIR__.'/../models/UserModel.php');
+        require(__DIR__.'/../models/UserModel.php');
 
         session_start();
         if (!empty($_SESSION['userid']))
@@ -73,7 +73,7 @@ class UserController
             header('Location: /form');
             exit;
         }
-        require_once(__DIR__.'/../views/aboutmyself.php');
+        require(__DIR__.'/../views/aboutmyself.php');
     }
 
     /**
