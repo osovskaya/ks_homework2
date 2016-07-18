@@ -1,6 +1,6 @@
 <?php
 
-include(__DIR__ . '/../helpers/PDOConnection.php');
+require(__DIR__ . '/../helpers/PDOConnection.php');
 
 class UserModel
 {
@@ -66,11 +66,6 @@ class UserModel
         if (!$filesUploaded) return false;
 
         // add user to database
-        if (!file_exists(__DIR__ . '/../helpers/PDOConnection.php'))
-        {
-            return false;
-        }
-
         self::$db = PDOConnection::getInstance()->getConnection();
         try
         {
@@ -104,11 +99,6 @@ class UserModel
      */
     public static function getUserInfo($id)
     {
-        if (!file_exists(__DIR__ . '/../helpers/PDOConnection.php'))
-        {
-            return false;
-        }
-
         self::$db = PDOConnection::getInstance()->getConnection();
         try
         {
